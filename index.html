@@ -1,67 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='icon' href = './img/image-thumbnail.png'>
-  
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>The Open Movie DataBase</title>
-</head>
-<body>
-
-  <div class="container">
-	<div class="row justify-content-center align-content-center mt-2">
-	
-		<div class = 'col-12 text-center'><h2>🎞️ The Open Movie DataBase</h2></div>
-		<h6 class = 'text-muted'> Svi podaci o Vasim omiljenim filomovima i serijama na jednom mjestu! </h6>
-
-	</div>
-	
-	<div class="row justify-content-center mt-4">
-		<form class = 'form-inline' >
-			<datalist id = 'lista'></datalist>
-			<input id = 'pretraga'  list  = 'lista' class = 'form-control' type = 'search' placeholder = 'Unesitie kriterijume pretrage'>
-			<select id = 'tip' class = 'form-control mx-2'>
-				<option selected label = 'Filmovi'>movie</option>
-				<option label = 'Serije'>series</option>
-			</select>
-			<input id = 'godina' class = 'form-control' type = 'text' placeholder = 'Godina'>
-			<button id = 'trazi' class = 'ml-1 btn btn-outline-primary' type = 'button' ><span class = 'text-warning spinner-border-sm' >🔍</span> Pretraga </button>
-			
-		</form>
-
-	</div>
-	
-	<div id = 'serach_result_temp' hidden  class="row mt-5 mx-auto">
-		<div class = 'col-4'>
-			<img  id = 'poster' class = 'img-fluid img-thumbnail rounded float-right' src ='./img/image-thumbnail.png' onerror = 'this.setAttribute("src", "./img/image-thumbnail.png")' >
-		</div>
-		
-		<div class = 'col-8'>
-		<table class = 'table table-responsive'>
-			<tr><td>Naslov:</td><td id = 'naslov'></td></tr>
-			<tr><td>Godina:</td><td id = 'godina'></td></tr>
-			<tr><td>Datum objavljivanja:</th><td id = 'datum'></td></tr>
-			<tr><td>Trajanje:</td><td id = 'trajanje'></td></tr>
-			<tr><td>Reziser:</td><td id = 'reziser'></td></tr>
-			<tr><td>Glumci:</td><td id = 'glumci'></td></tr>
-			<tr><td>Radnja:</td><td id = 'radnja'></td></tr>
-			<tr hidden><td>Broj sezona:</td><td id = 'sezona'></td></tr>
-			<tr><td class = 'pb-0' colspan=2>Ocijene gledalaca:</td></tr>
-			<tr><td></td><td colspan=2><div id = 'ocene' class = 'row'></div></td></tr>
-		</table>
-		</div>
-	</div>
-	
-	<div id = 'rezultat'></div>
-
-  </div>
-
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-	 <script src="app.js"></script>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel='icon' href = './img/image-thumbnail.png'>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <title>The Open Movie DataBase</title>
+   </head>
+   <body>
+      <div class="container">
+         <div class="row justify-content-center align-content-center mt-2">
+            <div class = 'col-12 text-center'>
+               <h2>🎞️ The Open Movie DataBase</h2>
+            </div>
+            <h6 class = 'text-muted'> Svi podaci o Vasim omiljenim filomovima i serijama na jednom mjestu! </h6>
+         </div>
+         <div class="row justify-content-center mt-4">
+            <form class = 'form-inline' >
+               <datalist id = 'lista'></datalist>
+               <input id = 'pretraga'  list  = 'lista' class = 'form-control' type = 'search' placeholder = 'Unesitie kriterijume pretrage'>
+               <select id = 'tip' class = 'form-control mx-2'>
+                  <option selected label = 'Filmovi'>movie</option>
+                  <option label = 'Serije'>series</option>
+               </select>
+               <input id = 'godina' class = 'form-control' type = 'text' placeholder = 'Godina'>
+               <button id = 'trazi' class = 'ml-1 btn btn-outline-primary' type = 'button' ><span class = 'text-warning spinner-border-sm' >🔍</span> Pretraga </button>
+            </form>
+         </div>
+         <div id = 'serach_result_temp' hidden  class="row mt-5 mx-auto">
+            <div class = 'col-4'>
+               <img  id = 'poster' class = 'img-fluid img-thumbnail rounded float-right' src ='./img/image-thumbnail.png' onerror = 'this.setAttribute("src", "./img/image-thumbnail.png")' >
+            </div>
+            <div class = 'col-8'>
+               <table class = 'table table-responsive'>
+                  <tr>
+                     <td>Naslov:</td>
+                     <td id = 'naslov'></td>
+                  </tr>
+                  <tr>
+                     <td>Godina:</td>
+                     <td id = 'godina'></td>
+                  </tr>
+                  <tr>
+                     <td>Datum objavljivanja:</th>
+                     <td id = 'datum'></td>
+                  </tr>
+                  <tr>
+                     <td>Trajanje:</td>
+                     <td id = 'trajanje'></td>
+                  </tr>
+                  <tr>
+                     <td>Reziser:</td>
+                     <td id = 'reziser'></td>
+                  </tr>
+                  <tr>
+                     <td>Glumci:</td>
+                     <td id = 'glumci'></td>
+                  </tr>
+                  <tr>
+                     <td>Radnja:</td>
+                     <td id = 'radnja'></td>
+                  </tr>
+                  <tr hidden>
+                     <td>Broj sezona:</td>
+                     <td id = 'sezona'></td>
+                  </tr>
+                  <tr>
+                     <td class = 'pb-0' colspan=2>Ocijene gledalaca:</td>
+                  </tr>
+                  <tr>
+                     <td></td>
+                     <td colspan=2>
+                        <div id = 'ocene' class = 'row'></div>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div id = 'rezultat'></div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+      <script src="app.js"></script>
+   </body>
 </html>
