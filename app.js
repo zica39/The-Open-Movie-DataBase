@@ -1,4 +1,4 @@
-const omdb =  'http://www.omdbapi.com/?i=tt3896198&apikey=3e9bec98'//7acf7772&'
+const omdb =  'http://www.omdbapi.com/?apikey=3e9bec98&' //7acf7772&'
 
 $(document).ready(function(){
 	
