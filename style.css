@@ -9,7 +9,7 @@ td:first-child{
 	width:200px;
 }
 tr:last-child td{
-	border:0!important;
+	/* border:0!important; */
 	padding-top:0px;
 }
 td, th {
