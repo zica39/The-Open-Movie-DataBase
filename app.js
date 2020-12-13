@@ -10,6 +10,7 @@ $(document).ready(function() {
     $('#tip').on('change', e => {
         $(lista).empty();
     });
+    $('form').on('submit',e => {event.preventDefault();});
 
 
     $('#pretraga').on('input', e => {
