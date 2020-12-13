@@ -47,8 +47,11 @@ $(document).ready(function() {
         var pretraga = {}
         pretraga.t = $('#pretraga').val();
         if (!pretraga.t) {
-            return false;
+            return true;
         }
+        
+        event.preventDefault();
+        
         $('#trazi').find('span').html('');
         $('#trazi').find('span').addClass('spinner-border');
 
