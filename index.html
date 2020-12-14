@@ -9,7 +9,7 @@
       <title>The Open Movie DataBase</title>
    </head>
    <body>
-      <div class="container">
+      <div class="container border rounded-sm shadow-sm my-5 py-5">
          <div class="row justify-content-center align-content-center mt-2">
             <div class = 'col-12 text-center'>
                <h2>🎞️ The Open Movie DataBase</h2>
@@ -17,22 +17,22 @@
             <h6 class = 'text-muted'> Svi podaci o Vasim omiljenim filomovima i serijama na jednom mjestu! </h6>
          </div>
          <div class="row justify-content-center mt-4">
-            <form class = 'form-inline' >
-               <datalist id = 'lista'></datalist>
-               <input id = 'pretraga'  list  = 'lista' class = 'form-control' type = 'search' placeholder = 'Unesitie kriterijume pretrage' required>
-               <select id = 'tip' class = 'form-control mx-2'>
-                  <option selected label = 'Filmovi'>movie</option>
-                  <option label = 'Serije'>series</option>
-               </select>
-               <input id = 'godina' class = 'form-control' type = 'text' placeholder = 'Godina'>
-               <button id = 'trazi' class = 'ml-1 btn btn-outline-primary' type = 'submit' ><span class = 'text-warning spinner-border-sm' >🔍</span> Pretraga </button>
-            </form>
+			<form class = 'form-inline' >
+			   <datalist id = 'lista'></datalist>
+			   <input id = 'pretraga' size = '25' list  = 'lista' class = 'form-control custom-control' type = 'search' placeholder = 'Unesitie kriterijume pretrage' required>
+			   <select id = 'tip' class = 'form-control custom-select mx-2'>
+				  <option selected label = 'Filmovi'>movie</option>
+				  <option label = 'Serije'>series</option>
+			   </select>
+			   <input id = 'godina' maxlength = '4' size = '5' class = 'form-control custom-control' type = 'text' placeholder = 'Godina'>
+			   <button id = 'trazi' class = 'ml-1 btn btn-outline-primary' type = 'submit' ><span class = 'text-warning spinner-border-sm' >🔍</span> Pretraga </button>
+			</form>
          </div>
          <div id = 'serach_result_temp' hidden  class="row mt-5 mx-auto">
-            <div class = 'col-4'>
-               <img  id = 'poster' class = 'img-fluid img-thumbnail rounded float-right' src ='./img/image-thumbnail.png' onerror = 'this.setAttribute("src", "./img/image-thumbnail.png")' >
+            <div class = 'col-md-4 col-sm-12'>
+               <img  id = 'poster' class = 'img-fluid img-thumbnail rounded float-md-right offset-sm-2' src ='./img/image-thumbnail.png' onerror = 'this.setAttribute("src", "./img/image-thumbnail.png")' >
             </div>
-            <div class = 'col-8'>
+            <div class = 'col-md-8 col-sm-12'>
                <table class = 'table table-responsive'>
                   <tr>
                      <td>Naslov:</td>

@@ -1,4 +1,4 @@
-const omdb = 'http://www.omdbapi.com/?apikey=3e9bec98&' //7acf7772&'
+const omdb = 'http://www.omdbapi.com/?apikey=3e9bec98&'
 
 $(document).ready(function() {
 
@@ -77,7 +77,10 @@ $(document).ready(function() {
 
 
                 if (result.Error) {
-                    $('#rezultat').html(`<h2 class = 'text-center mt-5' >${result.Error}</h2>`);
+					var greska = result.Error;
+					if(greska == 'Movie not found!')greska = 'Film nije pronadjen!';
+					if(greska == 'Series not found!')greska = 'Serija nije pronadjen!';
+                    $('#rezultat').html(`<h2 class = 'text-center mt-5' >${greska}</h2>`);
                     return;
                 }
 

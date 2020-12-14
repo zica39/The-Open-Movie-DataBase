@@ -15,3 +15,25 @@ tr:last-child td{
 td, th {
     border: none!important;
 }
+body {
+	font-size: 0.9em;
+}
+
+
+@media (max-width: 770px) {
+  .form-inline input {
+    margin: 10px auto!important;
+  }
+	
+	#godina {
+	margin-left: 0px!important;
+	}
+	#pretraga{
+	margin-right: 0px!important;	
+	}
+  
+  .form-inline button {
+	margin: 10px auto!important;
+	}
+}
+
