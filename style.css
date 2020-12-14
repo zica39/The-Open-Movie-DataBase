@@ -1,4 +1,4 @@
-body{
+body div:first-child{
 background: linear-gradient(to right, #ffffff 0%, #f3f7f3 100%);
 }
 table{
