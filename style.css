@@ -19,8 +19,7 @@ body {
 	font-size: 0.9em;
 }
 
-
-@media (max-width: 770px) {
+@media (max-width: 768px) {
   .form-inline input {
     margin: 10px auto!important;
   }
@@ -36,4 +35,3 @@ body {
 	margin: 10px auto!important;
 	}
 }
-

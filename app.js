@@ -100,7 +100,7 @@ $(document).ready(function() {
                 }
 
                 for (var i in result.Ratings)
-                    prikaz.find('#ocene').append(`<div class = 'col-8'>${result.Ratings[i].Source}</div><div class = 'col-4'>⭐${result.Ratings[i].Value}</div>`);
+                    prikaz.find('#ocene').append(`<div class = 'col-8'>${result.Ratings[i].Source}</div><div class = 'col-4 p-0 small'>⭐${result.Ratings[i].Value}</div>`);
 
                 $('#rezultat').append(prikaz);
                 prikaz.removeAttr('hidden');
